@@ -1,0 +1,10 @@
+/* -------- SimpleFilter styles --------- */
+.filterList {
+  background-color: #e2f5fc;
+  border: 1px solid #8ac;
+  font-size: 0.9em;
+  overflow: auto;
+}
+ul.filterList { list-style: none; padding: 0; margin: 0; }
+.filterList li { cursor: pointer; }
+.filterList li.activeFilterOption { background-color: #d3e6f5; }
