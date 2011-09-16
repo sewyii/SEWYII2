@@ -1,5 +1,7 @@
 <?php
-return array(
+$config =  CMap::mergeArray(
+        require(dirname(__FILE__).'/dev_conf.php'),
+        array(
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
         'name'=>'My Web Application',
 
@@ -70,5 +72,7 @@ return array(
         // this is used in contact page
                 'adminEmail'=>'webmaster@example.com',
         ),
+        )
 );
+return $config;
 ?>
