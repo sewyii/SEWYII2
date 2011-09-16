@@ -1,6 +1,6 @@
 <?php
 
-class BackendController extends Controller
+class BackendController extends SEController
 {
 	/**
 	 * Declares class-based actions.
