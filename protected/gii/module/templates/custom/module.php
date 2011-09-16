@@ -1,7 +1,7 @@
 <?php echo "<?php\n"; ?>
 /**
  * <?php echo $this->moduleClass; ?> 
- * @author <?php echo Yii::app()->param->developer ?> 
+ * @author <?php echo Yii::app()->params->developer ?> 
  * @version 
  * @package SEWYII2
  * @since 1.0

@@ -1,21 +1,11 @@
-<?php
-/**
- * This is the template for generating a controller class file.
- * The following variables are available in this template:
- * - $this: the ControllerCode object
- */
-?>
 <?php echo "<?php\n"; ?>
 
 /**
- * <?php echo $this->controllerClass; ?>
- * 
- * @package WebMenYii CMS  
- * @author Treitsiak A.A. (info@webmen.ca)
- * @copyright WebMenYii CMS (www.cms.webmen.ca) 
- * @version 1.0
+ * <?php echo $this->controllerClass; ?> 
+ * @author <?php echo Yii::app()->params->developer ?> 
+ * @version 
+ * @package SEWYII2
  * @since 1.0
- * @access public
  */
 
 class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseClass."\n"; ?>
