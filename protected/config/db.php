@@ -5,4 +5,5 @@ return array(
         'username' => 'user',
         'password' => 'pass',
         'charset' => 'utf8',
+        'tablePrefix' => 'sewyii_',
 );
