@@ -4,6 +4,7 @@ $config =  CMap::mergeArray(
         array(
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
         'name'=>'My Web Application',
+        'language' => 'ru',
 
         // preloading 'log' component
         'preload'=>array('log'),
@@ -30,21 +31,37 @@ $config =  CMap::mergeArray(
         'components'=>array(
                 'user'=>array(
                 // enable cookie-based authentication
-                        'allowAutoLogin'=>true,
+                        'class'=>'application.components.SEWebUser',
+                        'allowAutoLogin' => true,
+                //     'autoRenewCookie'=>true,
                 ),
                 // uncomment the following to enable URLs in path-format
 
                 'urlManager'=>array(
                         'urlFormat'=>'path',
                         'rules'=>array(
+                                'login'=>'frontend/login',
+                                'registration'=>'frontend/registration',
+                                'index'=>'frontend/index',
+                                'logout'=>'frontend/logout',
                                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                                
                         ),
+                        'showScriptName'=>false,
                 ),
                 'db' => require(dirname(__FILE__) . '/db.php'),
 
+                'authManager'=>array(
+                        'class'=>'CDbAuthManager',
+                        'connectionID'=>'db',
+                        'itemTable'=>'{{auth_item}}',
+                        'itemChildTable'=>'{{auth_item_child}}',
+                        'assignmentTable'=>'{{auth_assignment}}',
+                ),
 
+                
                 'errorHandler'=>array(
                 // use 'site/error' action to display errors
                 //  'errorAction'=>'site/error',
