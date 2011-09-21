@@ -21,4 +21,17 @@ class SEController extends CController
      */
     public $breadcrumbs = array();
 
+        /**
+     * Performs the AJAX validation.
+     * @param CModel the model to be validated
+     */
+    protected function performAjaxValidation($model)
+    {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === $model->scenario.'-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
+
 }
