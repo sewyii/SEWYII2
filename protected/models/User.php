@@ -4,7 +4,7 @@
  * {{user}}.
  * @author Serov Alexander <serov.sh@gmail.com>
  * @version
- * @package SEWYII2
+ * @package sewyiiUser2
  * @since 1.0
  */
 
@@ -76,16 +76,16 @@ class User extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-                'id' => Yii::t('wby','ID'),
-                'login' => Yii::t('wby','Login'),
-                'password' => Yii::t('wby','Password'),
-                'salt' => Yii::t('wby','Salt'),
-                'email' => Yii::t('wby','E-mail'),
-                'date_register' => Yii::t('wby','Date Register'),
-                'date_activate' => Yii::t('wby','Date Activate'),
-                'ip_register' => Yii::t('wby','Ip Register'),
-                'status' => Yii::t('wby','Status'),
-                'activate_key' => Yii::t('wby','Activate Key'),
+                'id' => Yii::t('sewyiiUser','ID'),
+                'login' => Yii::t('sewyiiUser','Login'),
+                'password' => Yii::t('sewyiiUser','Password'),
+                'salt' => Yii::t('sewyiiUser','Salt'),
+                'email' => Yii::t('sewyiiUser','E-mail'),
+                'date_register' => Yii::t('sewyiiUser','Date Register'),
+                'date_activate' => Yii::t('sewyiiUser','Date Activate'),
+                'ip_register' => Yii::t('sewyiiUser','Ip Register'),
+                'status' => Yii::t('sewyiiUser','Status'),
+                'activate_key' => Yii::t('sewyiiUser','Activate Key'),
         );
     }
 

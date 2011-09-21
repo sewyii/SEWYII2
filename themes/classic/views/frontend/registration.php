@@ -5,7 +5,7 @@
             'enableAjaxValidation' => true,
     )); ?>
 
-    <p class="note"><?php echo Yii::t('user', 'Поля, отмеченные * обязательны для заполнения')?></p>
+    <p class="note"><?=Yii::t('sewyiiUser', 'required_fields', array('[+*+]'=>'<span class="red">*</span>'))?></p>
 
     <?php echo $form->errorSummary($model); ?>
 
