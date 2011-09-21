@@ -2,6 +2,8 @@
 
 class BackendController extends SEController
 {
+
+    public $layout ='panel';
 	/**
 	 * Declares class-based actions.
 	 */
