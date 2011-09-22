@@ -50,7 +50,7 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new SEUserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or1 password.');
+				$this->addError('password',Yii::t('sewyiiFrontend','password_error'));
 		}
 	}
 
