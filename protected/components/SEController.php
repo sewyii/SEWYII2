@@ -21,7 +21,7 @@ class SEController extends CController
      */
     public $breadcrumbs = array();
 
-        /**
+     /**
      * Performs the AJAX validation.
      * @param CModel the model to be validated
      */
