@@ -4,11 +4,17 @@ $config =  CMap::mergeArray(
         array(
         'theme'=>'classic',
         'components'=>array(
-        // 'user'=>array(
-        // enable cookie-based authentication
-        //         'allowAutoLogin'=>true,
-        // ),
-        // uncomment the following to enable URLs in path-format
+                'user'=>array(
+                // enable cookie-based authentication
+                        'class'=>'application.components.SEFrontendUser',
+                        'allowAutoLogin' => true,
+                //     'autoRenewCookie'=>true,
+                ),
+                // 'user'=>array(
+                // enable cookie-based authentication
+                //         'allowAutoLogin'=>true,
+                // ),
+                // uncomment the following to enable URLs in path-format
 
                 'urlManager'=>array(
                         'rules'=>array(

@@ -29,12 +29,7 @@ $config =  CMap::mergeArray(
 
         // application components
         'components'=>array(
-                'user'=>array(
-                // enable cookie-based authentication
-                        'class'=>'application.components.SEWebUser',
-                        'allowAutoLogin' => true,
-                //     'autoRenewCookie'=>true,
-                ),
+                
                 // uncomment the following to enable URLs in path-format
 
                 'urlManager'=>array(
