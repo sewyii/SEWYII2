@@ -23,7 +23,7 @@
  * @property string $status
  * @property string $activate_key
  */
-class User extends CActiveRecord {
+class User extends SEActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @return User the static model class

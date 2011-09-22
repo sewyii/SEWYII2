@@ -23,7 +23,7 @@
  * @property string $create_date
  * @property string $update_date
  */
-class UserProfile extends CActiveRecord
+class UserProfile extends SEActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

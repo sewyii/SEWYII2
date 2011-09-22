@@ -21,7 +21,7 @@
  * @property integer $status
  * @property string $create_date
  */
-class Page extends CActiveRecord
+class Page extends SEActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
