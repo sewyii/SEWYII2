@@ -16,7 +16,7 @@
  * @property integer $send_email
  * @property integer $view_email
  */
-class UserSettings extends CActiveRecord {
+class UserSettings extends SEActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @return UserSettings the static model class
