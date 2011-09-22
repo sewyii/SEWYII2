@@ -19,7 +19,7 @@
  * @property string $create_date
  * @property string $last_date
  */
-class UserSession extends CActiveRecord {
+class UserSession extends SEActiveRecord {
     /**
      * Returns the static model of the specified AR class.
      * @return UserSession the static model class
