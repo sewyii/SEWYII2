@@ -15,7 +15,9 @@ class m110921_140516_create_user_table extends CDbMigration {
                           `activate_key` VARCHAR(32) NULL DEFAULT NULL ,
                           PRIMARY KEY (`id`) ,
                           UNIQUE INDEX `user_login` (`login` ASC) ,
-                          UNIQUE INDEX `user_mail` (`email` ASC)
+                          UNIQUE INDEX `user_mail` (`email` ASC) ,
+                          INDEX `user_activate_key` (`activate_key` ASC) ,
+                          INDEX `user_activate` (`status` ASC) )
                         ENGINE = InnoDB
                         AUTO_INCREMENT = 1
                         DEFAULT CHARACTER SET = utf8";
