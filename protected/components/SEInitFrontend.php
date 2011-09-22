@@ -27,6 +27,7 @@ class SEInitFrontend extends SEInitEntity
 	{
 		parent::_initSystem ($event);		
 		Yii::setPathOfAlias('actions',Yii::getPathOfAlias('application.actions.frontend'));		
+		Yii::setPathOfAlias('widgets',Yii::getPathOfAlias('application.widgets.frontend'));
 		$this->_preImport();
 	}
 	

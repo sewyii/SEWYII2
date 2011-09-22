@@ -27,6 +27,7 @@ class SEInitBackend extends SEInitEntity
 	{
 		parent::_initSystem ($event);		
 		Yii::setPathOfAlias('actions',Yii::getPathOfAlias('application.actions.backend'));		
+		Yii::setPathOfAlias('widgets',Yii::getPathOfAlias('application.widgets.backend'));
 		$this->_preImport();
 	}
 	

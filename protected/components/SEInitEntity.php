@@ -45,7 +45,9 @@ class SEInitEntity extends CApplicationComponent
 	protected function _initSystem($event)
     {        
 		Yii::setPathOfAlias('temp',Yii::getPathOfAlias('webroot.tmp'));
-		Yii::setPathOfAlias('behaviors',Yii::getPathOfAlias('application.behaviors'));	
+		Yii::setPathOfAlias('behaviors',Yii::getPathOfAlias('application.behaviors'));
+		Yii::setPathOfAlias('helpers',Yii::getPathOfAlias('application.helpers'));
+		Yii::setPathOfAlias('filters',Yii::getPathOfAlias('application.filters'));
     }
 	
 	/**
