@@ -3,7 +3,10 @@ $config =  CMap::mergeArray(
         require(dirname(__FILE__).'/core.php'),
         array(
         'theme'=>'classic',
-        'components'=>array(
+        'components'=>array(			
+				'init'=>array(
+						'class'=>'application.components.SEFrontendInit'
+				),			
                 'user'=>array(
                 // enable cookie-based authentication
                         'class'=>'application.components.SEFrontendUser',

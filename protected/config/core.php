@@ -7,7 +7,7 @@ $config =  CMap::mergeArray(
         'language' => 'ru',
 
         // preloading 'log' component
-        'preload'=>array('log'),
+        'preload'=>array('log',''),
 
         // autoloading model and component classes
         'import'=>array(
@@ -30,8 +30,7 @@ $config =  CMap::mergeArray(
         // application components
         'components'=>array(
                 
-                // uncomment the following to enable URLs in path-format
-
+                // uncomment the following to enable URLs in path-format				
                 'urlManager'=>array(
                         'urlFormat'=>'path',
                         'rules'=>array(
@@ -51,7 +50,11 @@ $config =  CMap::mergeArray(
                         'itemChildTable'=>'{{auth_item_child}}',
                         'assignmentTable'=>'{{auth_assignment}}',
                 ),
-
+				'request'=>array(
+					'class'=>'application.components.SERequest',
+					'enableCsrfValidation'=>true,
+					'enableCookieValidation'=>true,
+				), 
                 
                 'errorHandler'=>array(
                 // use 'site/error' action to display errors

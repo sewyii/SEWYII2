@@ -3,6 +3,9 @@ $config =  CMap::mergeArray(
         require(dirname(__FILE__).'/core.php'),
         array(
         'components'=>array(
+				'init'=>array(
+						'class'=>'application.components.SEBackendInit'
+				),	
                // 'user'=>array(
                 // enable cookie-based authentication
                //         'allowAutoLogin'=>true,

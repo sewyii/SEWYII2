@@ -1,14 +1,14 @@
 <?php
 
 /**
- * SEInitFrontend class file.
+ * SEFrontendInit class file.
  * @author Treitsiak A. <at@webmen.ca> 
  * @version 0.0.1
  * @package SEWYII2
  * @since 1.00
  */
 
-class SEInitFrontend extends SEInitEntity
+class SEFrontendInit extends SEInitEntity
 {
 	/**
 	 * Return the type of the current application.
