@@ -69,6 +69,7 @@ class User extends CActiveRecord {
         // class name for the relations automatically generated below.
         return array(
             'profile'=>array(self::HAS_ONE, 'UserProfile', 'id_user'),
+            'settings'=>array(self::HAS_ONE, 'UserSettings', 'id_user'),
         );
     }
 
