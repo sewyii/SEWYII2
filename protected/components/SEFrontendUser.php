@@ -9,7 +9,12 @@
  */
 
 class SEFrontendUser extends CWebUser
-{	
+{
+	public function init()
+	{
+		
+	}
+	
     /**
      * Logs a message.
      *

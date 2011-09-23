@@ -4,24 +4,26 @@ class SEUserIdentity extends CUserIdentity {
     public $login;
     public $password;
     private $_id;
+	protected $_user;
 
-    /**
+	/**
      * Authenticates a user.
      * @return boolean whether authentication succeeds.
      */
     public function __construct($login,$password) {
         $this->login=$login;
         $this->password=$password;
+		
+		$this->attachEventHandler('onAuthenticate', array($this, 'authenticate'));		
     }
 
-    public function authenticate() {
-        
-        $user=User::model()->findByAttributes(array('login'=>$this->login));
-        if($user===null)
+    public function authenticate() {		        
+        $this->_user=User::model()->findByAttributes(array('login'=>$this->login));
+        if($this->_user===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;
-        else if(!empty($user->activate_key))
+        else if(!empty($this->_user->activate_key))
             $this->errorCode=self::ERROR_ACTIVATION_INVALID;
-        else if(!$user->validatePassword($this->password)) 
+        else if(!$this->_user->validatePassword($this->password)) 
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
         else {
             $this->errorCode=self::ERROR_NONE;
@@ -38,5 +40,10 @@ class SEUserIdentity extends CUserIdentity {
     public function getId() {
         return $this->_id;
     }
+	
+	public function onAuthenticate($event)
+	{
+		$this->raiseEvent('onAuthenticate', $event);
+	}
 }
 ?>

@@ -49,6 +49,12 @@ class LoginForm extends SEFormModel
 		if(!$this->hasErrors())
 		{
 			$this->_identity=new SEUserIdentity($this->username,$this->password);
+			
+			if($this->_identity->hasEventHandler('onAuthenticate'))
+				print_r($this->_identity->getEventHandlers('onAuthenticate'));
+			exit();
+				$this->_identity->onAuthenticate(new CEvent($this->_identity));
+			
 			if(!$this->_identity->authenticate())
 				$this->addError('password',Yii::t('sewyiiFrontend','password_error'));
 		}
@@ -63,7 +69,7 @@ class LoginForm extends SEFormModel
 		if($this->_identity===null)
 		{
                     
-			$this->_identity=new SEUserIdentity($this->username,$this->password);
+			$this->_identity=new SEUserIdentity($this->username,$this->password);			
 			$this->_identity->authenticate();
 		}
 		if($this->_identity->errorCode===SEUserIdentity::ERROR_NONE)

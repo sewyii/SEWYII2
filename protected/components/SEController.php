@@ -32,6 +32,23 @@ class SEController extends CController
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
-    }
-
+    }	
+	
+	public function render($view, $data = null, $return = false)
+	{
+		$this->onBeforeRender(new CEvent($this));
+		parent::render ($view, $data, $return);
+		$this->onAfterRender(new CEvent($this));
+	}
+	
+	public function onBeforeRender($event)
+	{
+		$this->raiseEvent('onBeforeRender', $event);
+	}
+	
+	public function onAfterRender($event)
+	{
+		$this->raiseEvent('onAfterRender', $event);
+	}
+	
 }

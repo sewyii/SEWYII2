@@ -18,8 +18,8 @@ class SEInitEntity extends CApplicationComponent
 	 */
 	public function init()
 	{
-		parent::init();
-		
+		parent::init();	
+				
 		//Check whether there is an event initSystem, if not create it.
 		if($this->hasEvent('onInitSystem'))           
             $this->attachEventHandler('onInitSystem', array($this, '_initSystem'));
@@ -27,13 +27,13 @@ class SEInitEntity extends CApplicationComponent
 		//Check and launch event initSystem.
         if($this->hasEventHandler('onInitSystem'))
 			$this->onInitSystem(new CEvent($this));
-	}
+	}	
 	
 	/**
 	 * Direct execution of system initialization events.
 	 * @param CEvent $event 
 	 */
-	public function onInitSystem($event)
+	protected function onInitSystem($event)
     {
         $this->raiseEvent('onInitSystem',$event);
     }

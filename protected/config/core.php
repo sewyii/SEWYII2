@@ -7,12 +7,13 @@ $config =  CMap::mergeArray(
         'language' => 'ru',
 
         // preloading 'log' component
-        'preload'=>array('log',''),
+        'preload'=>array('log','init'),
 
         // autoloading model and component classes
         'import'=>array(
                 'application.models.*',
                 'application.components.*',
+				'application.modules.Facebook.components.*'
         ),
 
         'modules'=>array(
@@ -24,7 +25,9 @@ $config =  CMap::mergeArray(
                 // If removed, Gii defaults to localhost only. Edit carefully to taste.
                 //	'ipFilters'=>array('127.0.0.1','::1'),
                 ),
-
+				'facebook'=>array(
+					'class'=>'application.modules.Facebook'
+				),
         ),
 
         // application components
