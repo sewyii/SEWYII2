@@ -13,6 +13,7 @@ $config =  CMap::mergeArray(
         'import'=>array(
                 'application.models.*',
                 'application.components.*',
+                'application.controllers.*',
         ),
 
         'modules'=>array(
@@ -25,19 +26,25 @@ $config =  CMap::mergeArray(
                 //	'ipFilters'=>array('127.0.0.1','::1'),
                 ),
 
+                'extlogin'=>array(
+                        'class'=>'application.modules.ExtLogin.ExtLoginModule',
+                ),
+                // configure the signals module
+
+
         ),
 
         // application components
         'components'=>array(
-                
-                // uncomment the following to enable URLs in path-format				
+
+        // uncomment the following to enable URLs in path-format
                 'urlManager'=>array(
                         'urlFormat'=>'path',
                         'rules'=>array(
                                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                                
+
                         ),
                         'showScriptName'=>false,
                 ),
@@ -50,12 +57,12 @@ $config =  CMap::mergeArray(
                         'itemChildTable'=>'{{auth_item_child}}',
                         'assignmentTable'=>'{{auth_assignment}}',
                 ),
-				'request'=>array(
-					'class'=>'application.components.SERequest',
-					'enableCsrfValidation'=>true,
-					'enableCookieValidation'=>true,
-				), 
-                
+                'request'=>array(
+                        'class'=>'application.components.SERequest',
+                        'enableCsrfValidation'=>true,
+                        'enableCookieValidation'=>true,
+                ),
+
                 'errorHandler'=>array(
                 // use 'site/error' action to display errors
                 //  'errorAction'=>'site/error',

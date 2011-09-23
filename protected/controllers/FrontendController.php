@@ -19,7 +19,27 @@ class FrontendController extends SEController {
                 ),
         );
     }
+    public function behaviors() {
+        return array(
 
+                // configure the signal behavior
+                'EventBehavior' => array(
+
+                // class path to the behavior in alias notation
+                        'class' => 'application.behaviors.EventBehavior',
+
+                        // This is optional. If we don't provide it, every event this
+                        // component raises might be emitted as a signal. But since we
+                        // don't want to emit onAfterConstruct-, onAfterFind-,
+                        // onAfterXyz-Signals (those are too low-level), we can save some
+                        // overhead by explicitly specifying only the onPostPublished-Event
+                        // to be emitted as a signal.
+                        'events' => array(
+                                'onLogin',
+                        ),
+                ),
+        );
+    }
     /**
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.
@@ -27,8 +47,8 @@ class FrontendController extends SEController {
     public function actionIndex() {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-        
-        
+
+
         $this->render('index');
     }
 
@@ -61,21 +81,29 @@ class FrontendController extends SEController {
         $this->render('contact',array('model'=>$model));
     }
 
+    public function onLogin(CEvent $event) {
+        $this->raiseEvent('onLogin', $event);
+    }
+
     /**
      * Displays the login page
      */
     public function actionLogin() {
+        
+       
+
+        $arr = Yii::app()->request->getArray('LoginForm', array(), 'POST');
         $model=new LoginForm;
-        //$this->performAjaxValidation($user);
-        // collect user input data
-        if(isset($_POST['LoginForm'])) {
-            $model->attributes=$_POST['LoginForm'];
+
+        if(!empty($arr)) {
+            $model->attributes=$arr;
             // validate user input and redirect to the previous page if valid
             if($model->validate() && $model->login())
                 $this->redirect(Yii::app()->user->returnUrl);
         }
         // display the login form
         //print_r($model->errors);
+
         $this->render('login',array('model'=>$model));
     }
 

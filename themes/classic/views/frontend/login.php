@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Login</h1>
-
+<?=$this->onLogin(new CEvent);?>
 <p>Please fill out the following form with your login credentials:</p>
 
 <div class="form">
