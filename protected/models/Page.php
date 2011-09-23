@@ -13,11 +13,11 @@
  *
  * The followings are the available columns in table '{{page}}':
  * @property integer $id
- * @property string $name
+ * @property integer $name
  * @property string $title
  * @property string $content
  * @property integer $parent
- * @property integer $template
+ * @property integer $tmplate
  * @property integer $status
  * @property string $create_date
  */
@@ -48,14 +48,12 @@ class Page extends SEActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, parent, template, status', 'required'),
-			array('parent, template, status', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>250),
-			array('title', 'length', 'max'=>450),
+			array('name, parent, tmplate, status', 'numerical', 'integerOnly'=>true),
+			array('title', 'length', 'max'=>255),
 			array('content, create_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, title, content, parent, template, status, create_date', 'safe', 'on'=>'search'),
+			array('id, name, title, content, parent, tmplate, status, create_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,14 +74,14 @@ class Page extends SEActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => Yii::t('wby','ID'),
-			'name' => Yii::t('wby','Name'),
-			'title' => Yii::t('wby','Title'),
-			'content' => Yii::t('wby','Content'),
-			'parent' => Yii::t('wby','Parent'),
-			'template' => Yii::t('wby','Template'),
-			'status' => Yii::t('wby','Status'),
-			'create_date' => Yii::t('wby','Create Date'),
+			'id' => Yii::t('sewyiiPage','ID'),
+			'name' => Yii::t('sewyiiPage','Name'),
+			'title' => Yii::t('sewyiiPage','Title'),
+			'content' => Yii::t('sewyiiPage','Content'),
+			'parent' => Yii::t('sewyiiPage','Parent'),
+			'tmplate' => Yii::t('sewyiiPage','Tmplate'),
+			'status' => Yii::t('sewyiiPage','Status'),
+			'create_date' => Yii::t('sewyiiPage','Create Date'),
 		);
 	}
 
@@ -99,11 +97,11 @@ class Page extends SEActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('name',$this->name);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('parent',$this->parent);
-		$criteria->compare('template',$this->template);
+		$criteria->compare('tmplate',$this->tmplate);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('create_date',$this->create_date,true);
 
