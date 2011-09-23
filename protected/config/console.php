@@ -4,10 +4,20 @@
 // Any writable CConsoleApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Console Application',
+	'name'=>'SEWYII',
+	'import'=>array(
+				'application.interfaces.*',
+				'application.actions.*',
+				'application.behaviors.*',
+                'application.models.*',
+                'application.components.*',
+				'application.filters.*',
+				'application.helpers.*',
+				'application.widgets.*',		
+       ),
 	// application components
 	'components'=>array(
-		'db'=>require(dirname(__FILE__) . '/db.php'),
+		'db'=>require(dirname(__FILE__) . '/db.php'),		
 		// uncomment the following to use a MySQL database
 		/*
 		'db'=>array(
