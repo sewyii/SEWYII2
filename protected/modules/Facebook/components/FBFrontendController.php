@@ -8,7 +8,7 @@
  * @since 1.0
  */
 
-class FBIdentity extends SEUserIdentity
+class FBFrontendController extends SEUserIdentity
 {	
     /**
      * User authentication on Facabook.

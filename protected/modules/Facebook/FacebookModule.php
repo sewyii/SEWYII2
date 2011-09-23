@@ -7,7 +7,7 @@
  * @since 1.0
  */
 
-class FacebookModule extends SEModule
+class FacebookModule extends SEModuleEntity
 {
 	public $appId;
 	public $secret;
@@ -19,10 +19,23 @@ class FacebookModule extends SEModule
 
 		// import the module-level models and components
 		$this->setImport(array(
-			'Facebook.models.*',
-			'Facebook.components.*',
-		));
-		
-			
+			'facebook.models.*',
+                    	'facebook.components.*',
+                        'facebook.vendor.*',
+		));			
 	}
+        
+        public function events()
+        {
+            return array(
+                'onLogin'=>array($this, 'login')
+            );
+        }
+        
+        public function login($event)
+        {
+            $event->sender->beginClip('facebook');
+                $event->sender->widget('application.modules.Facebook.widgets.FbLogin'); 
+            $event->sender->endClip();
+        }
 }
