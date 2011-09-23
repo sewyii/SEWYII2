@@ -36,9 +36,18 @@ class FrontendController extends SEController {
                         // to be emitted as a signal.
                         'events' => array(
                                 'onLogin',
+                                'onPrintLoginForm',
                         ),
                 ),
         );
+    }
+
+    public function onPrintLoginForm(CEvent $event) {
+        $this->raiseEvent('onPrintLoginForm', $event);
+    }
+
+    public function onLogin(CEvent $event) {
+        $this->raiseEvent('onLogin', $event);
     }
     /**
      * This is the default 'index' action that is invoked
@@ -81,16 +90,14 @@ class FrontendController extends SEController {
         $this->render('contact',array('model'=>$model));
     }
 
-    public function onLogin(CEvent $event) {
-        $this->raiseEvent('onLogin', $event);
-    }
+
 
     /**
      * Displays the login page
      */
     public function actionLogin() {
-        
-       
+
+        $this->onLogin(new CEvent);
 
         $arr = Yii::app()->request->getArray('LoginForm', array(), 'POST');
         $model=new LoginForm;

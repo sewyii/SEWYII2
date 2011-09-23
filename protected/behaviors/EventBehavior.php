@@ -31,7 +31,7 @@ class EventBehavior extends CBehavior {
 
     //Собираем все обработчики евентов со всех возможных компонентов\модулей
     public function getAllHandlers() {
-        $this->handlers = Yii::app()->getModule('extlogin')->getHandlers();
+        $this->handlers = Yii::app()->getModule('extensionLogin')->getHandlers();
         //надо сделать цикл по всем подключенным модулям
     }
 }

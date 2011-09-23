@@ -26,8 +26,8 @@ $config =  CMap::mergeArray(
                 //	'ipFilters'=>array('127.0.0.1','::1'),
                 ),
 
-                'extlogin'=>array(
-                        'class'=>'application.modules.ExtLogin.ExtLoginModule',
+                'extensionLogin'=>array(
+                        'class'=>'application.modules.ExtensionLogin.ExtensionLoginModule',
                 ),
                 // configure the signals module
 
