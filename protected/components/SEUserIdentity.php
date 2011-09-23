@@ -13,11 +13,16 @@ class SEUserIdentity extends CUserIdentity {
     public function __construct($login,$password) {
         $this->login=$login;
         $this->password=$password;
-		
-		$this->attachEventHandler('onAuthenticate', array($this, 'authenticate'));		
+		Yii::app()->event->onAuthenticate->add(array($this, 'authenticate'));		
     }
 
-    public function authenticate() {		        
+    public function authenticate() {	
+
+		if(Yii::app()->event->hasEventHandler('onAuthenticate'))
+				print_r(Yii::app()->event->getEventHandlers('onAuthenticate'));
+			exit();
+				Yii::app()->event->onAuthenticate(new CEvent($this->_identity));
+		
         $this->_user=User::model()->findByAttributes(array('login'=>$this->login));
         if($this->_user===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;
@@ -41,7 +46,7 @@ class SEUserIdentity extends CUserIdentity {
         return $this->_id;
     }
 	
-	public function onAuthenticate($event)
+	public function eventAuthenticate($event)
 	{
 		$this->raiseEvent('onAuthenticate', $event);
 	}

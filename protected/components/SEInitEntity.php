@@ -55,7 +55,8 @@ class SEInitEntity extends CApplicationComponent
 	 */
 	protected function _preImport()
 	{
-		Yii::import('behaviors.*');        
+		Yii::import('behaviors.*');
+		Yii::app()->attachBehavior('test', new SEEventEntityBehavior());
 	}
 
     /**
