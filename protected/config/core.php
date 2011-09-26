@@ -29,6 +29,12 @@ $config =  CMap::mergeArray(
                 'extensionLogin'=>array(
                         'class'=>'application.modules.ExtensionLogin.ExtensionLoginModule',
                 ),
+
+                'topics'=>array(
+                        'class'=>'application.modules.Topics.TopicsModule',
+                        'config'=>require(dirname(__FILE__) . '/../modules/Topics/config.php'),
+                        
+                ),
                 // configure the signals module
 
 
