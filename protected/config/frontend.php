@@ -46,6 +46,11 @@ $config =  CMap::mergeArray(
 				'consumer_secret'=>'',
 				'callback'=>'http://sewyii.dev/?r=twitter/default/callback',				
 			),
+			'loid'=>array(
+				'identity'=>'http://openid-provider.appspot.com',
+				'required'=>array('namePerson/friendly', 'contact/email'),
+				'callback'=>'http://sewyii.dev/?r=loid/default/callback',				
+			),
 		),
         )
 );

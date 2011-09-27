@@ -11,7 +11,6 @@ class TwitterLogin extends CInputWidget{
         
 			if(Yii::app()->user->isGuest)
 			{
-				$module=Yii::app()->getModule('twitter');
                 $this->TW = TwitterEntity::getEntity();			
 			}
                         
