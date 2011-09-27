@@ -12,17 +12,10 @@ class SEUserIdentity extends CUserIdentity {
      */
     public function __construct($login,$password) {
         $this->login=$login;
-        $this->password=$password;
-		Yii::app()->event->onAuthenticate->add(array($this, 'authenticate'));		
+        $this->password=$password;		
     }
 
-    public function authenticate() {	
-
-		if(Yii::app()->event->hasEventHandler('onAuthenticate'))
-				print_r(Yii::app()->event->getEventHandlers('onAuthenticate'));
-			exit();
-				Yii::app()->event->onAuthenticate(new CEvent($this->_identity));
-		
+    public function authenticate() {			
         $this->_user=User::model()->findByAttributes(array('login'=>$this->login));
         if($this->_user===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;

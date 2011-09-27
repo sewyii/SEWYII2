@@ -951,3 +951,32 @@ class Facebook
     return base64_decode(strtr($input, '-_', '+/'));
   }
 }
+
+class FacebookEntity extends Facebook
+{	
+	static $instance;
+	
+	public function __construct($config)
+	{
+		$module = Yii::app()->getModule('facebook');
+		
+		$config['appId'] = $module->devappid;
+		$config['secret'] = $module->devsecret;
+		$config['cookie'] = $module->cookie;
+		
+		parent::__construct ($config);
+	}
+	
+	/**
+	 * Singleton
+	 * @param array $result
+	 * @return Facebook 
+	 */
+	static function getEntity($config=array())
+	{		
+		if(is_null(self::$instance))
+			self::$instance = new FacebookEntity($config);
+
+		return self::$instance;
+	}
+}

@@ -1,9 +1,9 @@
 <?php
 return array(
-        'connectionString' => 'mysql:host=localhost;dbname=muba2',
+        'connectionString' => 'mysql:host=localhost;dbname=sewyii',
         'emulatePrepare' => true,
-        'username' => 'user',
-        'password' => 'pass',
+        'username' => 'root',
+        'password' => '123456',
         'charset' => 'utf8',
         'tablePrefix' => 'sewyii_',
 );

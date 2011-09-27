@@ -8,14 +8,14 @@ window.fbAsyncInit = function() {FB.init({appId : '<?php echo $session; ?>',sess
 /*
 if ($user){
 echo '<a href="'.$logout.'">';
-echo Chtml::image("http://static.ak.fbcdn.net/rsrc.php/z2Y31/hash/cxrz4k7j.gif",'Logout');
+echo CHtml::image("http://static.ak.fbcdn.net/rsrc.php/z2Y31/hash/cxrz4k7j.gif",'Logout');
 echo '</a>';
 }else{ */ 
 
 
 
 echo '<a href="'.$login.'">';
-echo Chtml::image("http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif",'Login');
+echo CHtml::image("http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif",'Login');
 echo '</a>';
 
 

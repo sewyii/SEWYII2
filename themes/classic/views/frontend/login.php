@@ -5,6 +5,10 @@ $this->breadcrumbs=array(
 );
 ?>
 
+<?php 
+$this->widget('application.widgets.frontend.login.Login');
+?>
+
 <h1>Login</h1>
 
 <p>Please fill out the following form with your login credentials:</p>

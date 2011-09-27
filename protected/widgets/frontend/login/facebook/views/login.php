@@ -5,13 +5,16 @@ window.fbAsyncInit = function() {FB.init({appId : '<?php echo $session; ?>',sess
 <?php
 
 echo '<a href="'.$login.'">';
-echo Chtml::image("http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif",'Login');
+echo CHtml::image("http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif",'Login');
 echo '</a>';
 
+/*
 echo '<pre>';
 	print_r($user);
 	echo '</pre>';
 	echo '<pre>';
 	print_r($session);
 	echo '</pre>';
+ * 
+ */
 ?>

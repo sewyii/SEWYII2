@@ -24,16 +24,14 @@ $config =  CMap::mergeArray(
                         'password'=>'admin',
                 // If removed, Gii defaults to localhost only. Edit carefully to taste.
                 //	'ipFilters'=>array('127.0.0.1','::1'),
-                ),
-				'facebook'=>array(
-					'class'=>'application.modules.Facebook'
-				),
+                ),				
         ),
 
         // application components
         'components'=>array(
                 
-                // uncomment the following to enable URLs in path-format				
+                // uncomment the following to enable URLs in path-format
+				
                 'urlManager'=>array(
                         'urlFormat'=>'path',
                         'rules'=>array(
@@ -43,7 +41,7 @@ $config =  CMap::mergeArray(
                                 
                         ),
                         'showScriptName'=>false,
-                ),
+                ),				 
                 'db' => require(dirname(__FILE__) . '/db.php'),
 
                 'authManager'=>array(

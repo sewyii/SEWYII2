@@ -35,6 +35,13 @@ $config =  CMap::mergeArray(
                         'errorAction'=>'frontend/error',
                 ),
         ),
+		'modules'=>array(
+			'facebook'=>array(
+			'devappid'=>'',
+			'devsecret'=>'',
+			'cookie'=>TRUE,
+		),
+		),
         )
 );
 return $config;

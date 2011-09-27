@@ -83,8 +83,10 @@ class FrontendController extends SEController {
      * Logs out the current user and redirect to homepage.
      */
     public function actionLogout() {
-        Yii::app()->user->logout();
-        $this->redirect(Yii::app()->homeUrl);
+        $return = Yii::app()->user->getState('logout');
+		Yii::app()->user->logout();		
+		$this->redirect($return, true);
+		unset($return);
     }
 
 
