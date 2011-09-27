@@ -40,7 +40,12 @@ $config =  CMap::mergeArray(
 			'devappid'=>'',
 			'devsecret'=>'',
 			'cookie'=>TRUE,
-		),
+			),
+			'twitter'=>array(
+				'consumer_key'=>'',
+				'consumer_secret'=>'',
+				'callback'=>'http://sewyii.dev/?r=twitter/default/callback',				
+			),
 		),
         )
 );
