@@ -18,14 +18,10 @@ class EventBehavior extends CBehavior {
         parent::attach( $owner );
 
         $this->getAllHandlers();
-        
         foreach($this->events as $event) {
             foreach($this->handlers as $handler) {
-                if($event==$handler['event']) {
-                    
+                if($event==$handler['event'])
                     $this->getOwner()->$event->add($handler['handler']);
-                    
-                }
             }
         }
 

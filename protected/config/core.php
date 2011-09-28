@@ -7,7 +7,7 @@ $config =  CMap::mergeArray(
         'language' => 'ru',
 
         // preloading 'log' component
-        'preload'=>array('log',''),
+        'preload'=>array('log','init'),
 
         // autoloading model and component classes
         'import'=>array(

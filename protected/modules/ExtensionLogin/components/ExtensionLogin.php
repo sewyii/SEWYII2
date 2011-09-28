@@ -7,7 +7,7 @@
  * @since 1.0
  */
 
-class ExtensionLogin extends SEFrontendInit {
+class ExtensionLogin extends SEExtensionsEntity {
 
     public $identity;
     /**

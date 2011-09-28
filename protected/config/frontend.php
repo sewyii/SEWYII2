@@ -25,13 +25,13 @@ $config =  CMap::mergeArray(
 
                 'urlManager'=>array(
                         'rules'=>array(
-                                '' => 'frontend/site/index',
-                                'index'=>'frontend/site/index',
-                                'login'=>'frontend/site/login',
-                                'registration'=>'frontend/site/registration',
-                                'logout'=>'frontend/site/logout',
-                                'user'=>'frontend/user/index',
-                                //'<controller:\w+>/<action:\w+>/<id:\d+>'=>'frontend/<controller>/<action>',
+                                '' => '/site/index',
+                                'index'=>'/site/index',
+                                'login'=>'/site/login',
+                                'registration'=>'/site/registration',
+                                'logout'=>'/site/logout',
+                                'user'=>'/user/index',
+                                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 
                         ),
@@ -40,7 +40,7 @@ $config =  CMap::mergeArray(
 
                 'errorHandler'=>array(
                 // use 'site/error' action to display errors
-                        'errorAction'=>'frontend/site/error',
+                        'errorAction'=>'/site/error',
                 ),
         ),
         )

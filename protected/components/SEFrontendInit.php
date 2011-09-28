@@ -25,10 +25,17 @@ class SEFrontendInit extends SEInitEntity
 	 */
 	protected function _initSystem($event)
 	{
-		parent::_initSystem ($event);		
-		Yii::setPathOfAlias('actions',Yii::getPathOfAlias('application.actions.frontend'));		
+            
+		parent::_initSystem ($event);
+            
+		Yii::setPathOfAlias('actions',Yii::getPathOfAlias('application.actions.frontend'));
 		Yii::setPathOfAlias('widgets',Yii::getPathOfAlias('application.widgets.frontend'));
+                Yii::setPathOfAlias('controllers',Yii::getPathOfAlias('application.controllers.frontend'));
+                
 		$this->_preImport();
+                Yii::app()->controllerPath .= DIRECTORY_SEPARATOR.'frontend';
+                //echo Yii::app()->controllerPath;
+                
 	}
 	
 	/**
