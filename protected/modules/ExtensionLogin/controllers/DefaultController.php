@@ -1,6 +1,6 @@
 <?php
 
-class DefaultController extends FrontendController {
+class DefaultController extends SEFrontendController {
 
     public function actionIndex() {
         //Yii::app()->getModule('extlogin')->onLogin->insertAt(0,array($this, 'print3'));
