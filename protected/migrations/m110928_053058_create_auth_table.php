@@ -2,14 +2,14 @@
 
 class m110928_053058_create_auth_table extends CDbMigration {
     public function up() {
-        $this->createTable('{{auth_assigment}}', array(
+        $this->createTable('{{auth_assignment}}', array(
                 'itemname' => 'string',
                 'userid' => 'integer',
                 'bizrule' => 'text',
                 'data' => 'text',
                 ),"ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
-        Yii::app()->db->createCommand('ALTER TABLE {{auth_assigment}} ADD PRIMARY KEY ( `itemname` , `userid` ) ;')->execute();
+        Yii::app()->db->createCommand('ALTER TABLE {{auth_assignment}} ADD PRIMARY KEY ( `itemname` , `userid` ) ;')->execute();
 
 
         $this->createTable('{{auth_item}}', array(
@@ -35,7 +35,7 @@ class m110928_053058_create_auth_table extends CDbMigration {
 
 
     public function down() {
-        $this->dropTable('{{auth_assigment}}');
+        $this->dropTable('{{auth_assignment}}');
         $this->dropTable('{{auth_item}}');
         $this->dropTable('{{auth_item_child}}');
     }
