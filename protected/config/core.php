@@ -13,7 +13,6 @@ $config =  CMap::mergeArray(
         'import'=>array(
                 'application.models.*',
                 'application.components.*',
-                'application.controllers.*',
         ),
 
         'modules'=>array(
@@ -42,8 +41,8 @@ $config =  CMap::mergeArray(
 
         // application components
         'components'=>array(
-
-        // uncomment the following to enable URLs in path-format
+                
+                // uncomment the following to enable URLs in path-format				
                 'urlManager'=>array(
                         'urlFormat'=>'path',
                         'rules'=>array(

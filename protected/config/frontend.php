@@ -3,10 +3,14 @@ $config =  CMap::mergeArray(
         require(dirname(__FILE__).'/core.php'),
         array(
         'theme'=>'classic',
-        'components'=>array(			
-				'init'=>array(
-						'class'=>'application.components.SEFrontendInit'
-				),			
+        'import'=>array(
+
+                'application.controller.frontend.*',
+        ),
+        'components'=>array(
+                'init'=>array(
+                        'class'=>'application.components.SEFrontendInit'
+                ),
                 'user'=>array(
                 // enable cookie-based authentication
                         'class'=>'application.components.SEFrontendUser',
@@ -21,18 +25,21 @@ $config =  CMap::mergeArray(
 
                 'urlManager'=>array(
                         'rules'=>array(
-                                '' => 'frontend/index',
-                                'index'=>'frontend/index',
-                                'login'=>'frontend/login',
-                                'registration'=>'frontend/registration',
-                                'logout'=>'frontend/logout',
+                                '' => 'frontend/site/index',
+                                'index'=>'frontend/site/index',
+                                'login'=>'frontend/site/login',
+                                'registration'=>'frontend/site/registration',
+                                'logout'=>'frontend/site/logout',
+                                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'frontend/<controller>/<action>',
+                                '<controller:\w+>/<action:\w+>'=>'frontend/<controller>/<action>',
+
                         ),
                 ),
 
 
                 'errorHandler'=>array(
                 // use 'site/error' action to display errors
-                        'errorAction'=>'frontend/error',
+                        'errorAction'=>'frontend/site/error',
                 ),
         ),
         )

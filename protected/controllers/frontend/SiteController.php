@@ -1,11 +1,16 @@
 <?php
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-class FrontendController extends SEController {
-    public $layout = 'column1';
-    /**
-     * Declares class-based actions.
-     */
-    public function actions() {
+/**
+ * Description of SiteController
+ *
+ * @author root
+ */
+class SiteController extends SEFrontendController {
+   public function actions() {
         return array(
                 // captcha action renders the CAPTCHA image displayed on the contact page
                 'captcha'=>array(
@@ -149,3 +154,4 @@ class FrontendController extends SEController {
 
     }
 }
+?>
