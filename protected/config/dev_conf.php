@@ -1,7 +1,7 @@
 <?php
 return array(
     'params'=>array(
-      'developer'=>'Serov Alexander <serov.sh@gmail.com>',
+      'developer'=>'Treitjak A. <at@webmen.ca>',
     ),
 
 );
