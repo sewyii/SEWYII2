@@ -30,6 +30,9 @@ $config =  CMap::mergeArray(
                                 'login'=>'frontend/site/login',
                                 'registration'=>'frontend/site/registration',
                                 'logout'=>'frontend/site/logout',
+                                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'frontend/<controller>/<action>',
+                                '<controller:\w+>/<action:\w+>'=>'frontend/<controller>/<action>',
+
                         ),
                 ),
 
